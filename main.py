@@ -17,6 +17,10 @@ def get_latest_release(user, repo, name_re):
         return jsonify(message="error from GitHub api",
                        github_api_msg=resp.json()), resp.status_code
 
+    if name_re == 'tar':
+        return redirect(resp.json()['tarball_url'])
+    if name_re == 'zip':
+        return redirect(resp.json()['zipball_url'])
     assets = resp.json()['assets']
     matched = [x['browser_download_url'] for x in assets if name_reobj.search(x['name'])]
     n = len(matched)
