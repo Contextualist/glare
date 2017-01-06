@@ -2,7 +2,9 @@ FROM python:2.7-alpine
 
 WORKDIR /glare
 
-RUN pip install flask requests gunicorn gevent supervisor && \
+RUN apk --update add --virtual BD gcc g++ && \
+    pip install flask requests gunicorn gevent supervisor && \
+    apk del BD && rm -rf /var/cache/apk/* && \
     echo_supervisord_conf > ./supervisor.conf
 
 ADD supervisor_glare.conf main.py ./
