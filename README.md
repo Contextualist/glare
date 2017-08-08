@@ -4,7 +4,7 @@ A little service for you to **g**et **la**test **re**leases from GitHub graceful
 ### Demo
 The following will redirect you to `https://github.com/xtaci/kcptun/releases/download/{latest_version_tag}/kcptun-linux-amd64-{latest_version_number}.tar.gz`, and download the latest release of kcptun for linux-amd64. 
 ```bash
-curl -fLO https://glare.arukascloud.io/xtaci/kcptun/linux-amd64
+curl -fLO https://glare.now.sh/xtaci/kcptun/linux-amd64
 ```
 
 ## Motivation
