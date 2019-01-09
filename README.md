@@ -20,4 +20,4 @@ Sometimes when I'm writing a Dockerfile, I need to install packages from the the
 `{file_name_regex}` is a regular expression to match the file (or specially, it can be `tar` or `zip` standing for the source code download in the respective format). It should match only one file among the latest release files, otherwise Glare will throw an error.
 
 ## Docker (legacy version)
-See branch `[docker](https://github.com/Contextualist/glare/tree/docker)`
+See branch [`docker`](https://github.com/Contextualist/glare/tree/docker)
