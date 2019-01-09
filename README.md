@@ -1,4 +1,7 @@
 # Glare
+
+[![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/Contextualist/glare)
+
 A little service for you to **g**et **la**test **re**leases from GitHub gracefully. Simply make a get request to Glare with the repo name and release file name fragment, and she will lead you to the way.
 
 ### Demo
@@ -16,5 +19,5 @@ Sometimes when I'm writing a Dockerfile, I need to install packages from the the
 ```
 `{file_name_regex}` is a regular expression to match the file (or specially, it can be `tar` or `zip` standing for the source code download in the respective format). It should match only one file among the latest release files, otherwise Glare will throw an error.
 
-## Docker
-`contextualist/glare`
+## Docker (legacy version)
+See branch `[docker](https://github.com/Contextualist/glare/tree/docker)`

@@ -1,0 +1,10 @@
+{
+    "version": 2,
+    "name": "glare",
+    "builds": [
+        { "src": "main.py", "use": "@contextualist/python-wsgi" }
+    ],
+    "routes": [
+        { "src": "/(.*)/(.*)/(.*)", "dest": "main.py" }
+    ]
+}
