@@ -17,7 +17,11 @@ Sometimes when I'm writing a Dockerfile, I need to install packages from the the
 ```
 /{owner}/{repo}/{file_name_regex}
 ```
-`{file_name_regex}` is a regular expression to match the file (or specially, it can be `tar` or `zip` standing for the source code download in the respective format). It should match only one file among the latest release files, otherwise Glare will throw an error.
+`{file_name_regex}` is a regular expression to match the file (or specially, it can be `tar` or `zip` standing for the source code download in the respective format). It should match at least one file among the latest release files, otherwise Glare will throw an error. If multiple files are matched, Glare returns the one with shortest length.
+
+## Known Issues
+
+The Now.sh builder `python-wsgi` seems to be having problem with URL containing `$` sign.
 
 ## Docker (legacy version)
 See branch [`docker`](https://github.com/Contextualist/glare/tree/docker)

@@ -26,8 +26,7 @@ def get_latest_release(user, repo, name_re):
     n = len(matched)
     if n == 0:
         return jsonify(message="no file matched"), 404
-    if n > 1:
-        return jsonify(message="multiple files matched"), 400
+    matched = sorted(matched, key=len)
     return redirect(matched[0])
 
 if __name__ == '__main__':
