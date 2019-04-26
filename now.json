@@ -1,8 +1,10 @@
 {
     "version": 2,
+    "regions": ["all"],
     "name": "glare",
+    "alias": "glare.now.sh",
     "builds": [
-        { "src": "main.py", "use": "@contextualist/python-wsgi" }
+        { "src": "main.py", "use": "@now/python" }
     ],
     "routes": [
         { "src": "/(.*)/(.*)/(.*)", "dest": "main.py" }

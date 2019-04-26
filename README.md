@@ -21,7 +21,7 @@ Sometimes when I'm writing a Dockerfile, I need to install packages from the the
 
 ## Known Issues
 
-The Now.sh builder `python-wsgi` seems to be having problem with URL containing `$` sign.
+* URL that contains `$` sign doesn't work at Now.sh.
 
 ## Docker (legacy version)
 See branch [`docker`](https://github.com/Contextualist/glare/tree/docker)
