@@ -9,10 +9,9 @@ def get_latest_release(user, repo, name_re):
     try:
         name_reobj = re.compile(name_re)
     except re.error as e:
-        return jsonify(message="bad regular expression: {}".format(e.message)), 400
+        return jsonify(message=f"bad regular expression: {e.message}"), 400
 
-    resp = requests.get("https://api.github.com/repos/{user}/{repo}/releases/latest"
-                        .format(user=user, repo=repo))
+    resp = requests.get(f"https://api.github.com/repos/{user}/{repo}/releases/latest")
     if resp.status_code != 200:
         return jsonify(message="error from GitHub api",
                        github_api_msg=resp.json()), resp.status_code
@@ -23,8 +22,7 @@ def get_latest_release(user, repo, name_re):
         return redirect(resp.json()['zipball_url'])
     assets = resp.json()['assets']
     matched = [x['browser_download_url'] for x in assets if name_reobj.search(x['name'])]
-    n = len(matched)
-    if n == 0:
+    if len(matched) == 0:
         return jsonify(message="no file matched"), 404
     matched = sorted(matched, key=len)
     return redirect(matched[0])
