@@ -9,7 +9,7 @@ def get_latest_release(user, repo, name_re):
     try:
         name_reobj = re.compile(name_re)
     except re.error as e:
-        return jsonify(message=f"bad regular expression: {e.message}"), 400
+        return jsonify(message=f"bad regular expression: {e.msg}"), 400
 
     resp = requests.get(f"https://api.github.com/repos/{user}/{repo}/releases/latest")
     if resp.status_code != 200:
