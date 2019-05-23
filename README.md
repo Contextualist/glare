@@ -21,9 +21,5 @@ Sometimes when I'm writing a Dockerfile, I need to install packages from their G
 
 Tip: to check if a request leads to the desired redirection, `curl` it without any option.
 
-## Known Issues
-
-* URL that contains `$` sign doesn't work at Now.sh.
-
 ## Docker (legacy version)
 See branch [`docker`](https://github.com/Contextualist/glare/tree/docker)
