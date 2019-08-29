@@ -24,7 +24,7 @@ def get_latest_release(user, repo, name_re):
     matched = [x['browser_download_url'] for x in assets if name_reobj.search(x['name'])]
     if len(matched) == 0:
         return jsonify(message="no file matched"), 404
-    matched = sorted(matched, key=len)
+    matched.sort(key=len)
     return redirect(matched[0])
 
 if __name__ == '__main__':

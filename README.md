@@ -4,6 +4,8 @@
 
 A little service for you to **g**et **la**test **re**leases from GitHub gracefully. Simply make a get request to Glare with the repo name and release file name regex, and she will lead you to the way.
 
+**NOTE:** You might want to use [GitHub's direct link](https://help.github.com/en/articles/linking-to-releases#linking-to-the-latest-release) to the latest release asset (e.g. `github.com/{owner}/{repo}/releases/latest/download/asset-name.zip`) if the asset name is a constant string. Otherwise Glare is still helpful for matching the asset with regex.
+
 ### Demo
 The following will redirect you to `https://github.com/xtaci/kcptun/releases/download/{latest_version_tag}/kcptun-linux-amd64-{latest_version_number}.tar.gz`, and download the latest release of kcptun for linux-amd64. 
 ```bash
