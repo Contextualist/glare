@@ -1,2 +1,3 @@
 flask
 requests
+node-semver~=0.7.0
