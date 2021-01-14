@@ -1,6 +1,6 @@
 # Glare
 
-[![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/Contextualist/glare)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2FContextualist%2Fglare&project-name=glare&repo-name=glare&demo-title=Glare&demo-description=gracefully%20download%20(latest)%20releases%20from%20GitHub&demo-url=https%3A%2F%2Fgithub.com%2FContextualist%2Fglare&demo-image=https%3A%2F%2Frepository-images.githubusercontent.com%2F77979589%2Fa6437980-6472-11e9-9660-133b39d9978f)
 
 A little service for you to download releases from GitHub gracefully. Simply make a get request to Glare with the repo name (with an optional version) and release file name regex, and she will lead you to the way.
 
@@ -14,7 +14,7 @@ curl -fLO https://glare.now.sh/xtaci/kcptun/linux-amd64
 
 Or you might want to have a version constraint:
 ```bash
-curl -fLO https://glare.now.sh/dhall/dhall-haskell@~1.24.x/bash.*linux
+curl -fLO https://glare.now.sh/v2fly/v2ray-core@~v4.27.x/linux-64
 ```
 
 ## Motivation
