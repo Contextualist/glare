@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, redirect
-import requests
+import httpx
 import semver
 import re
 
@@ -47,7 +47,7 @@ def get_release(user, repo_ver, name_re):
     return redirect(matched[0])
 
 def api_req(url):
-    resp = requests.get(url)
+    resp = httpx.get(url)
     if resp.status_code != 200:
         return None, (jsonify(message="error from GitHub API",
                               github_api_msg=resp.json()), resp.status_code)
