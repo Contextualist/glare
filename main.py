@@ -16,7 +16,7 @@ def get_release(user, repo_ver, name_re):
     repo = repo_ver[0]
     if len(repo_ver) == 2: # versioned
         ver = repo_ver[1]
-        all_releases, err = api_req(f"https://api.github.com/repos/{user}/{repo}/releases")
+        all_releases, err = api_req(f"https://api.github.com/repos/{user}/{repo}/releases?per_page=100")
         if err: return err
         all_tags = [x['tag_name'] for x in all_releases]
         if ver in all_tags: # exact match
