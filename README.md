@@ -14,7 +14,7 @@ curl -fLO https://glare.now.sh/xtaci/kcptun/linux-amd64
 
 Or you might want to have a version constraint:
 ```bash
-curl -fLO https://glare.now.sh/v2fly/v2ray-core@~v4.27.x/linux-64
+curl -fLO https://glare.now.sh/v2fly/v2ray-core@v4.x/linux-64
 ```
 
 ## Motivation
