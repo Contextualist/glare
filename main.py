@@ -1,9 +1,16 @@
+from dotenv import dotenv_values
 from flask import Flask, jsonify, redirect
+import ast
 import httpx
-import semver
+import os
 import re
+import semver
 
 app = Flask(__name__)
+config = {
+    **dotenv_values(".env"),
+    **os.environ
+}
 
 @app.route('/')
 def redir():
@@ -51,7 +58,7 @@ def get_release(user, repo_ver, name_re):
     return redirect(matched[0])
 
 def api_req(url):
-    resp = httpx.get(url)
+    resp = httpx.get(url, headers={'Authorization': config['GITHUB_AUTHORIZATION']}) if ast.literal_eval(config['GITHUB_IS_AUTHORIZED']) == True else httpx.get(url)
     if resp.status_code != 200:
         return None, (jsonify(message="error from GitHub API",
                               github_api_msg=resp.json()), resp.status_code)
