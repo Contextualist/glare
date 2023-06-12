@@ -6,7 +6,7 @@
         { "src": "/.*/.*/.*", "dest": "main.py" }
     ],
     "env": {
-        "GITHUB_AUTHORIZATION": "@github-authorization",
+        "GITHUB_AUTHORIZATION": "Bearer YOUR-TOKEN",
         "GITHUB_IS_AUTHORIZED": "False"
     }
 }
