@@ -5,6 +5,10 @@ import re
 
 app = Flask(__name__)
 
+@app.route('/')
+def redir():
+    return redirect("https://github.com/Contextualist/glare")
+
 @app.route('/<user>/<repo_ver>/<name_re>')
 def get_release(user, repo_ver, name_re):
     try:
