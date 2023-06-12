@@ -1,3 +1,4 @@
 flask
 httpx
 node-semver~=0.8.0
+python-dotenv
